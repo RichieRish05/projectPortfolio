@@ -1,0 +1,24 @@
+.logo {
+    max-width: 50%; /* Scales down the image proportionally */
+    height: auto;    /* Maintains aspect ratio */
+
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.img-spin {
+    animation: spin 10s linear infinite; /* Spins continuously */
+}
+
+body {
+    background-color: #2e313d; /* Brown */
+    margin: 0; /* Remove default margins */
+    height: 100%; /* Ensure it covers the full page height */
+}
