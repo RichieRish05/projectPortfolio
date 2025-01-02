@@ -13,6 +13,9 @@ const ProjectsPage = () => {
                 <div className="col-md-6">
                     <Card image={"/chess.png"} name={"Chess"}/>
                 </div>
+                <div className="col-md-6">
+                    <Card image={"/research.png"} name={"Research"}/>
+                </div>
             </div>
         </div>
 
