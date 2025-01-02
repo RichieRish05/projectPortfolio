@@ -6,6 +6,7 @@ import NavBar from './components/navBar.jsx';
 
 import HomePage from './pages/homePage/homePage.jsx';
 import AboutPage from './pages/aboutPage/aboutPage.jsx';
+import ProjectsPage from './pages/projectsPage/projectsPage.jsx';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/about" element={<AboutPage/>}/>
+        <Route path="/projects" element={<ProjectsPage/>}/>
       </Routes>
       </BrowserRouter>
 
