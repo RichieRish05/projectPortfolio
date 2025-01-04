@@ -1,0 +1,11 @@
+.resized-container{
+    min-width: 0; /* Removes any minimum width */
+    width: auto; /* Optional: Allows the container to shrink freely */
+}
+
+.resize{
+    width: 300px;
+    height: auto;
+    max-width: 100%;
+
+}

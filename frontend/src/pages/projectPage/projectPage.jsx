@@ -39,10 +39,6 @@ const ProjectPage = () => {
 
     },[projectId])
 
-    const titles = {
-        "chess": "Chess",
-        "3d_lidar_adverse_weather": "3D Lidar Adverse Weather Object Detection"
-    }
     const mediaContent = {
         "chess": 
                 <video width="320" height="240" autoPlay playsinline controls loop>
@@ -51,8 +47,7 @@ const ProjectPage = () => {
                 </video>
         ,
         "3d_lidar_adverse_weather": 
-            <img src="/convolution.png" alt="Convolution" className="resized"/>
-        
+            <img src="/convolution.png" alt="Convolution Image" className="resized rounded img-fluid"/>
     };
 
     
@@ -64,7 +59,7 @@ const ProjectPage = () => {
             <div className="container mt-4">
             <div className="card text-light bg-dark border-light shadow-sm">
                 <div className="card-body">
-                    <h1 className="card-title text-warning">{titles[pageInfo._id]}</h1>
+                    <h1 className="card-title text-warning">{pageInfo.title}</h1>
                     {pageInfo._id? mediaContent[pageInfo._id]:<p>No Media Content</p>}
                     
                     <ul className="list-group list-group-flush">
@@ -84,7 +79,7 @@ const ProjectPage = () => {
                         )}
                     </ul>
                     <a 
-                        class="btn btn-primary text-light" 
+                        className="btn btn-primary text-light" 
                         href={pageInfo.link} 
                         role="button"
                         target="_blank"

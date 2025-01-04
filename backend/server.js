@@ -5,7 +5,7 @@ const app = express();  //Set up the express framework for the backend
 
 const PORT = 8000; 
 
-const mongoURI= 'mongodb+srv://rishimurumkar:Opal3727!@cluster0.qjupq.mongodb.net/portfolio?retryWrites=true&w=majority";'
+const mongoURI= 'mongodb+srv://rishimurumkar:Opal3727!@cluster0.qjupq.mongodb.net/portfolio?retryWrites=true&w=majority';
 
 mongoose
     .connect(mongoURI)
@@ -26,11 +26,13 @@ app.get('/', (req, res) => {
 
 
 const userSchema = new mongoose.Schema({
-    _id: { type: String, required: true, unique: true},
+    _id: { type: String, required: true},
+    title: { type: String, required: true},
     scope: { type: String, required: true },
     project_description: { type: String, required: true },
     outcome: {type: String, required: true},
-    problem_solved_for_client: {type: String, required: false}
+    link: {type: String, required: true},
+    problem_solved_for_client: {type: String, required: false},
   });
   
 const projectModel = mongoose.model('portfolio_projects', userSchema);

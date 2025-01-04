@@ -1,3 +1,8 @@
+.resized-container{
+    min-width: 0; /* Removes any minimum width */
+    width: auto; /* Optional: Allows the container to shrink freely */
+}
+
 .resized{
     width: 600px; /* Set desired width */
     height: auto; /* Maintain aspect ratio */

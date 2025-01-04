@@ -8,6 +8,7 @@ import HomePage from './pages/homePage/homePage.jsx';
 import AboutPage from './pages/aboutPage/aboutPage.jsx';
 import ProjectsPage from './pages/projectsPage/projectsPage.jsx';
 import ProjectPage from './pages/projectPage/projectPage.jsx';
+import ImageGenerationPage from './pages/imageGenerationPage/imageGeneration.jsx';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/about" element={<AboutPage/>}/>
         <Route path="/projects" element={<ProjectsPage/>}/>
         <Route path="/projects/:projectId" element={<ProjectPage/>}/>
+        <Route path="/imageGeneration" element={<ImageGenerationPage/>}/>
       </Routes>
       </BrowserRouter>
 
