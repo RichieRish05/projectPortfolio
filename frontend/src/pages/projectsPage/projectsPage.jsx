@@ -11,10 +11,10 @@ const ProjectsPage = () => {
         <div className ="container mt-4">
             <div className="row">
                 <div className="col-md-6">
-                    <Card image={"/chess.png"} name={"Chess"}/>
+                    <Card image={"/chess.png"} name={"Chess"} projectId={"chess"}/>
                 </div>
                 <div className="col-md-6">
-                    <Card image={"/research.png"} name={"Research"}/>
+                    <Card image={"/research.png"} name={"Research"} projectId={"3d_lidar_adverse_weather"}/>
                 </div>
             </div>
         </div>
