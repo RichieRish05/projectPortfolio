@@ -25,6 +25,55 @@ app.get('/', (req, res) => {
 
 
 
+
+
+
+const { createClient } = require('pexels');
+
+
+const API_KEY = '4PFBtu8tWleWNJIAlKLgjRpZcAfiMsZiH0slevhOC3owufmIakVq5TvN';
+const client = createClient(API_KEY);
+
+
+const searchQueries = [
+    "apple", "banana", "car", "dog", "elephant", "flower", "guitar", "hat", "island", "jelly",
+    "kangaroo", "lamp", "mountain", "notebook", "ocean", "pencil", "quilt", "robot", "sandwich", "tree",
+    "umbrella", "vase", "whale", "xylophone", "yacht", "zebra", "ball", "cat", "desk", "engine", "forest",
+    "garden", "house", "igloo", "jacket", "kite", "ladder", "mirror", "nest", "orange", "piano",
+    "queen", "rain", "sun", "train", "umbrella", "village", "wolf", "x-ray", "yogurt", "zipper",
+    "anchor", "boat", "castle", "dolphin", "eagle", "fire", "giraffe", "helmet", "iceberg", "jungle",
+    "kitchen", "lemon", "microphone", "necklace", "octopus", "penguin", "quill", "river", "sailboat", "telescope",
+    "unicorn", "volcano", "wheel", "xenon", "yarn", "zeppelin", "bridge", "camera", "diamond", "earring",
+    "fountain", "globe", "harbor", "insect", "jewel", "kangaroo", "lantern", "meadow", "noodle", "orchard"
+];
+
+
+
+app.get('/randomImage', async (req, res) => {
+    const randomIndex = Math.floor(Math.random() * searchQueries.length);
+    const query = searchQueries[randomIndex];
+
+
+    try {
+        // Await the Pexels API call
+        const data = await client.photos.search({ query, per_page: 1 });
+        
+        // Validate the response
+        if (!data.photos || data.photos.length === 0) {
+            return res.status(404).json({ error: "No photos found for the query." });
+        }
+
+        // Return the photo URL
+        res.json({query, photo: data.photos[0].src.original});
+    } catch (error) {
+        console.error("Error fetching image:", error.message);
+        res.status(500).json({ error: "An error occurred while fetching the image." });
+    }
+    
+});
+
+
+
 const userSchema = new mongoose.Schema({
     _id: { type: String, required: true},
     title: { type: String, required: true},
