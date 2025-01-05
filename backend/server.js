@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors'); 
 const mongoose = require('mongoose');
 const app = express();  //Set up the express framework for the backend
-const {createClient} = require("pexels"); // For image API calls
 
 const PORT = 8000; 
 
