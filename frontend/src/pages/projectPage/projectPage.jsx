@@ -4,7 +4,7 @@ import './projectPage.css'
 import { useParams } from 'react-router-dom';
 import React, {useState, useEffect} from "react";
 
-const API_URL = "http://localhost:8000";
+const API_URL = "https://portfolio-backend-24v5.onrender.com";
 
 const ProjectPage = () => {
     const {projectId} = useParams();

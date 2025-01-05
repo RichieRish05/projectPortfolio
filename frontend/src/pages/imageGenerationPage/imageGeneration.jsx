@@ -4,8 +4,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { createClient } from 'pexels';
 
 
-const API = "http://localhost:8000";
-
 const API_KEY = '4PFBtu8tWleWNJIAlKLgjRpZcAfiMsZiH0slevhOC3owufmIakVq5TvN';
 const client = createClient(API_KEY);
 
