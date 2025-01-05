@@ -1,11 +1,14 @@
 import React, {useState} from "react";
-import { createClient } from 'pexels';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
+import { createClient } from 'pexels';
 
 
-const API_KEY = "INSERT YOUR API KEY HERE";
+const API = "http://localhost:8000";
+
+const API_KEY = '4PFBtu8tWleWNJIAlKLgjRpZcAfiMsZiH0slevhOC3owufmIakVq5TvN';
 const client = createClient(API_KEY);
+
 
 
 const ImageGenerationPage = () => {
@@ -13,19 +16,20 @@ const ImageGenerationPage = () => {
 
 
     const handleClick = () => {
-        const query = "Tigers";
+        const searchQueries = ['tigers', 'nature', 'ocean'];
+        const randomIndex = Math.floor(Math.random()*searchQueries.length)
+        const query = searchQueries[randomIndex];
+        console.log(query);
+        try {
+            client.photos.search({ query, per_page: 1 }).then(data => 
+                {
+                    setImage(data.photos[0].src.original);
+                })
+            
+        } catch (error) {
+            console.error(error.message)
+        }
 
-        client.photos
-            .search({ query, per_page: 1, orientation: "landscape" })
-            .then(data => {
-                console.log(data);
-                if (data.photos && data.photos.length > 0) {
-                    setImage(data.photos[0].src.original); 
-                } else {
-                    console.error("No images found for the query.");
-                }
-            })
-            .catch(error => console.error("Error fetching images:", error.message));
     };
 
 
