@@ -6,9 +6,9 @@ const HomePage = () => {
 
     return (
         <div className="text-white">
-            <h1 className="text-info">Rishi Murumkar</h1>
+            <h1 className="text-info futuristic-font">Rishi Murumkar</h1>
             <img className="img-fluid logo img-spin" src={"/logo.png"} alt="Logo" />
-            <h2 className="text-info">"Simplicity is the soul of efficiency."</h2>
+            <h2 className="text-info futuristic-font">"Simplicity is the soul of efficiency."</h2>
         </div>
     )
 }

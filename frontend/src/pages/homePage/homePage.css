@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 .logo {
     max-width: 50%; /* Scales down the image proportionally */
     height: auto;    /* Maintains aspect ratio */
@@ -18,7 +20,12 @@
 }
 
 body {
-    background-color: #2e313d; /* Brown */
+    background-color: #2e313d; /* Grey */
     margin: 0; /* Remove default margins */
     height: 100%; /* Ensure it covers the full page height */
 }
+
+.futuristic-font {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+  }

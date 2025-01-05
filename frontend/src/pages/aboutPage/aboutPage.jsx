@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
 import './aboutPage.css'
-import NewPageButton from '../../components/newPageButton';
+import NewPageButton from '../../components/newPageButton/newPageButton';
 
 const AboutPage = () => {
 

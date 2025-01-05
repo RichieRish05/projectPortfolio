@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './projectPage.css'
 import { useParams } from 'react-router-dom';
 import React, {useState, useEffect} from "react";
+import NewPageButton from '../../components/newPageButton/newPageButton';
 
 const API_URL = "https://portfolio-backend-24v5.onrender.com";
 
@@ -78,13 +79,7 @@ const ProjectPage = () => {
                         </li>
                         )}
                     </ul>
-                    <a 
-                        className="btn btn-primary text-light" 
-                        href={pageInfo.link} 
-                        role="button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >Link to project</a>
+                    <NewPageButton btnName={"Link to project"} link={pageInfo.link}/>
                 </div>
             </div>
             </div>
