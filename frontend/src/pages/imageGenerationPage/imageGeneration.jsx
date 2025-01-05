@@ -1,13 +1,9 @@
 import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
-// import { createClient } from 'pexels';
 
 
-// const API_KEY = '4PFBtu8tWleWNJIAlKLgjRpZcAfiMsZiH0slevhOC3owufmIakVq5TvN';
-// const client = createClient(API_KEY);
-
-const API_URL = "http://localhost:8000";
+const API_URL = "https://portfolio-backend-24v5.onrender.com";
 
 const ImageGenerationPage = () => {
     const [image, setImage] = useState(null);
