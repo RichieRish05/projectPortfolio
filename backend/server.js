@@ -1,15 +1,19 @@
 const express = require('express');
 const cors = require('cors'); 
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); //Library to interact with mongodb
 const app = express();  //Set up the express framework for the backend
+const { createClient } = require('pexels'); //Library to interact with pexels API
 
+//Port that the server runs on locally for testing 
 const PORT = 8000; 
 
+//Location of portfolio database in my mongodb cluster
 const mongoURI= 'mongodb+srv://rishimurumkar:Opal3727!@cluster0.qjupq.mongodb.net/portfolio?retryWrites=true&w=majority';
 
+//Connect to portfolio database using mongoose
 mongoose
     .connect(mongoURI)
-    .then(() => console.log('Connected to MongoDB Atlas and portfolio database'))
+    .then(() => console.log('Connected to MongoDB Atlas and Portfolio database'))
     .catch(err => console.error('Error connecting to MongoDB:', err));
 
 //Middleware to parse JSON requests
@@ -26,11 +30,6 @@ app.get('/', (req, res) => {
 
 
 
-
-
-const { createClient } = require('pexels');
-
-
 const API_KEY = '4PFBtu8tWleWNJIAlKLgjRpZcAfiMsZiH0slevhOC3owufmIakVq5TvN';
 const client = createClient(API_KEY);
 
@@ -44,11 +43,11 @@ const searchQueries = [
     "anchor", "boat", "castle", "dolphin", "eagle", "fire", "giraffe", "helmet", "iceberg", "jungle",
     "kitchen", "lemon", "microphone", "necklace", "octopus", "penguin", "quill", "river", "sailboat", "telescope",
     "unicorn", "volcano", "wheel", "xenon", "yarn", "zeppelin", "bridge", "camera", "diamond", "earring",
-    "fountain", "globe", "harbor", "insect", "jewel", "kangaroo", "lantern", "meadow", "noodle", "orchard"
+    "fountain", "globe", "harbor", "insect", "jewel", "kangaroo", "lantern", "meadow", "noodle", "orchard", "Real Madrid"
 ];
 
 
-
+//Route to fetch a random image from the pexels API
 app.get('/randomImage', async (req, res) => {
     const randomIndex = Math.floor(Math.random() * searchQueries.length);
     const query = searchQueries[randomIndex];
@@ -63,9 +62,10 @@ app.get('/randomImage', async (req, res) => {
             return res.status(404).json({ error: "No photos found for the query." });
         }
 
-        // Return the photo URL
+        // Return the search query and photo URL
         res.json({query, photo: data.photos[0].src.original});
     } catch (error) {
+        //Catch any errors
         console.error("Error fetching image:", error.message);
         res.status(500).json({ error: "An error occurred while fetching the image." });
     }
@@ -73,8 +73,8 @@ app.get('/randomImage', async (req, res) => {
 });
 
 
-
-const userSchema = new mongoose.Schema({
+//Define a mongoose schema to interact with the documents stored in the portfolio_projects collection
+const projectSchema = new mongoose.Schema({
     _id: { type: String, required: true},
     title: { type: String, required: true},
     scope: { type: String, required: true },
@@ -84,29 +84,36 @@ const userSchema = new mongoose.Schema({
     problem_solved_for_client: {type: String, required: false},
   });
   
-const projectModel = mongoose.model('portfolio_projects', userSchema);
+//Define a model that enforeces the projectSchema on the portfolio_projects collection
+const projectModel = mongoose.model('portfolio_projects', projectSchema);
 
+//Find the project specified in the portfolio_projects collection
 const findProject = async (projectId) => {
     try{
+        //Wait until the project document is fetched
         const project = await projectModel.findOne({ _id: projectId});
         return project;
     } catch(error){
+        //Log the error and throw it
         console.error(error.message);
         throw(error);
     }
 };
 
 
+//Define a route to fetch a project from the portfolio_projects collection based on the projectID parameter
 app.get('/:projectId', async (req, res) => {
     const {projectId} = req.params;
     try{
         if (!projectId){
             res.status(400).json({ error: 'Project id necessary' });
         }
+        //Find and return the project
         const data = await findProject(projectId);
         res.json({data});
 
     } catch(error){
+        //Catch any errors
         res.status(500).json({error: error.message})
     }
 
