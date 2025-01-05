@@ -10,13 +10,23 @@ const API_KEY = '4PFBtu8tWleWNJIAlKLgjRpZcAfiMsZiH0slevhOC3owufmIakVq5TvN';
 const client = createClient(API_KEY);
 
 
+const searchQueries = [
+    "apple", "banana", "car", "dog", "elephant", "flower", "guitar", "hat", "island", "jelly",
+    "kangaroo", "lamp", "mountain", "notebook", "ocean", "pencil", "quilt", "robot", "sandwich", "tree",
+    "umbrella", "vase", "whale", "xylophone", "yacht", "zebra", "ball", "cat", "desk", "engine", "forest",
+    "garden", "house", "igloo", "jacket", "kite", "ladder", "mirror", "nest", "orange", "piano",
+    "queen", "rain", "sun", "train", "umbrella", "village", "wolf", "x-ray", "yogurt", "zipper",
+    "anchor", "boat", "castle", "dolphin", "eagle", "fire", "giraffe", "helmet", "iceberg", "jungle",
+    "kitchen", "lemon", "microphone", "necklace", "octopus", "penguin", "quill", "river", "sailboat", "telescope",
+    "unicorn", "volcano", "wheel", "xenon", "yarn", "zeppelin", "bridge", "camera", "diamond", "earring",
+    "fountain", "globe", "harbor", "insect", "jewel", "kangaroo", "lantern", "meadow", "noodle", "orchard"
+];
 
 const ImageGenerationPage = () => {
     const [image, setImage] = useState(null);
 
 
     const handleClick = () => {
-        const searchQueries = ['tigers', 'nature', 'ocean'];
         const randomIndex = Math.floor(Math.random()*searchQueries.length)
         const query = searchQueries[randomIndex];
         console.log(query);
