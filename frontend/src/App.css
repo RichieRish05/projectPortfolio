@@ -42,13 +42,14 @@
 }
 
 .btn-primary {
-  background-color: #0246f4fb;
-  border-color: #5ef0f8;
+  background-color: #0246f4fb; /* Change button color to dark blue */
+  border-color: #5ef0f8; /* Change button border to light blue */
 }
 
 .btn-primary:hover {
-  color: #0246f4fb;
-  background-color: #5ef0f8;
-  border-color: #0246f4fb;
+  /* Activates when hovering over button */
+  color: #0246f4fb; /* Change text color to dark blue */
+  background-color: #5ef0f8; /* Change button color to light blue */
+  border-color: #0246f4fb; /* Change button border to dark blue */
 }
 

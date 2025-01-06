@@ -1,14 +1,14 @@
-.resized-container{
+.resized-container {
     min-width: 0; /* Removes any minimum width */
-    width: auto; /* Optional: Allows the container to shrink freely */
+    width: auto; /* Allows the container to adjust freely */
 }
 
-.resize{
-    width: 300px;
-    height: auto;
-    max-width: 100%;
+.resize {
+    width: 300px; /* Default width */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 100%; /* Prevents overflow */
 }
 
 .text-gold {
-    color: #ffd900fb
+    color: #ffd900fb; /* Change text to gold */
 }
