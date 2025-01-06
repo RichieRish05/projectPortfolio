@@ -37,19 +37,19 @@ const NavBar = () => {
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         {/* Link to Home Page */}
-                        <Link className="nav-link" to="/">Home</Link> 
+                        <Link className="nav-link" to="/" onClick={toggleNavBar}>Home</Link> 
                     </li>
                     <li className="nav-item">
                         {/* Link to About Page */}
-                        <Link className="nav-link" to="/about">About</Link> 
+                        <Link className="nav-link" to="/about" onClick={toggleNavBar}>About</Link> 
                     </li>
                     <li className="nav-item">
                         {/* Link to Projects Viewing Page */}
-                        <Link className="nav-link" to="/projects">Projects</Link> 
+                        <Link className="nav-link" to="/projects" onClick={toggleNavBar}>Projects</Link> 
                     </li>
                     <li className="nav-item">
                          {/* Link to Image Generation Page */}
-                        <Link className="nav-link" to="/imageGeneration">Image Generator</Link>
+                        <Link className="nav-link" to="/imageGeneration" onClick={toggleNavBar}>Image Generator</Link>
                     </li>
                 </ul>
             </div>
