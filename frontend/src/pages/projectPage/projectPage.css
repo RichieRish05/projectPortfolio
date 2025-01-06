@@ -8,3 +8,7 @@
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Ensure it fits within the parent container */
 }
+
+.text-gold {
+    color: #ffd900fb
+}
