@@ -23,7 +23,7 @@ const AboutPage = () => {
                 <div className="card text-light bg-dark border-light shadow-sm">
                     <div className="card-body">
                         {/* Title for the About Me section */}
-                        <h1 className="card-title text-warning">About Me</h1>
+                        <h1 className="card-title text-gold mb-4">About Me</h1>
                         
                         {/* Image section */}
                         <img src="/aboutMe.jpg" className="resize img-fluid rounded mb-3" alt="Could Not Load Image"/>

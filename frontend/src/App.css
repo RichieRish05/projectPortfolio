@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+.btn-primary {
+  background-color: #0246f4fb;
+  border-color: #5ef0f8;
+}
+
+.btn-primary:hover {
+  color: #0246f4fb;
+  background-color: #5ef0f8;
+  border-color: #0246f4fb;
+}
+

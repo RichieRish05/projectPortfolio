@@ -1,6 +1,6 @@
 // Importing CSS for styling the application
-import './App.css'; //Custom styling
 import 'bootstrap/dist/css/bootstrap.min.css'; //Bootstrap styling
+import './App.css'; //Custom styling
 
 //Importing necessary components from react-router-dom for routing
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; //Routing components

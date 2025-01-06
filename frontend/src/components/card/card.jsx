@@ -14,9 +14,9 @@ const Card = ({ image, name, projectId}) => {
 
     return (
         //Card container with bootstrap styles
-        <div className="card h-100" style={{ width: "18rem" }}>
+        <div className="card h-100 bg-dark border-light shadow-sm" style={{ width: "18rem" }}>
             {/* Title of card */}
-            <h5 className="card-title">{name}</h5>
+            <h5 className="card-title text-light mb-4 fs-4">{name}</h5>
             {/* Load the specified image */}
             <img src={image} alt={name} className="card-img-top img-fluid sized-right"/>
             {/* Container for card body */}

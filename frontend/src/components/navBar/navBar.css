@@ -1,18 +1,18 @@
 .custom-navbar {
-    background-color: #2e313d; /* purple background */
-    color: white; /* white text */
+    background-color: #2e313d; 
+    color: white; 
   }
   
   .custom-navbar .nav-link {
-    color: white; /* white links */
+    color: white;
   }
   
   .custom-navbar .nav-link:hover {
-    color: #ffc800; /* gold highlight on hover */
+    color: #ffc800; 
   }
   
   .navbar-toggler {
-    border-color: white; /* Make the border white of the hamburger menu white */
+    border-color: white; 
   }
   
   .navbar-toggler-icon {
