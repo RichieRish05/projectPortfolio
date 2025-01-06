@@ -38,15 +38,27 @@ const AboutPage = () => {
                     </div>
                 </div>
             </div>
-    
-            {/* Button linking to GitHub profile */}
-            <NewPageButton btnName={"Github"} link={githubLink} />
-            
-            {/* Button to start a collaboration, linking to an email */}
-            <NewPageButton btnName={"Let's Work Together!"} link={mailtoLink} />
-            
-            {/* Button linking to LinkedIn profile */}
-            <NewPageButton btnName={"Linkedin"} link={linkedinLink} />
+
+            {/* Create a container to hold buttons. On big screens, the buttons align horizontally. On small screens,
+            buttons align vertically. */}
+            <div className="container d-flex justify-content-center align-items-center">
+                {/* Row to organize buttons */}
+                <div className="row">
+                    {/* Responsive column with github button */}
+                    <div className="col-md-auto col-12">
+                        <NewPageButton btnName={"Github"} link={githubLink} />
+                    </div>
+                    {/* Responsive column with email button */}
+                    <div className="col-md-auto col-12">
+                        <NewPageButton btnName={"Let's Work Together!"} link={mailtoLink} />
+                    </div>
+                    {/* Responsive column with linkedin button */}
+                    <div className="col-md-auto col-12">
+                        <NewPageButton btnName={"Linkedin"} link={linkedinLink} />
+                    </div>
+                </div>
+            </div>
+
         </>
     );
 };
